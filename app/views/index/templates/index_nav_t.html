@@ -1,0 +1,91 @@
+<!-- Top Nav -->
+<nav class="navbar dip-dk-orange-bg p-2">
+  <div class="mx-auto">
+    <a class="lobster-font dip-creme dip-text-lg mx-auto" href="/">Pick a Student</a>
+  </div>
+</nav>
+
+<div id="edit" class="collapse dip-lt-orange-bg">
+  <div class="mx-auto wrapper">
+    <div class="row pl-3 pt-4">
+      <div class="col-sm-8">
+        <div class="input-group w-100">
+          <input type="text" class="form-control" id="new_course_name" aria-describedby="new_course_help" placeholder="Enter course name">
+          <div class="input-group-append">
+            <button class="input-group-text text-success" id="create_course">
+              <i class="fas fa-book-open"></i>
+            </button>
+          </div>
+        </div>
+        <small id="new_course_help" class="form-text text-muted">Creating a new course will cause you to lose progress on unsaved courses.</small>
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="row pl-3 pt-3">
+      <div class="col-sm-8">
+        <div class="input-group w-100">
+          <input type="text" class="form-control" id="new_student_name" aria-describedby="add_student_help" placeholder="Enter student name">
+          <div class="input-group-append">
+            <button class="input-group-text text-success" id="add_student">
+              <i class="fas fa-user-plus"></i>
+            </button>
+          </div>
+        </div>
+        <small id="add_student_help" class="form-text text-muted">A course must either be create or loaded from a file in order to add a student.</small>
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="row pl-3 py-3">
+      <div class="col-sm-8">
+        <div class="input-group w-100">
+          <select class="form-control" id="delete_student_name" aria-describedby="delete_student_help" placeholder="Search for student" data-live-search="true">
+            <option></option>
+          </select>
+          <div class="input-group-append">
+            <button class="input-group-text text-danger" id="delete_student">
+              <i class="fas fa-user-times"></i>
+            </button>
+          </div>
+        </div>
+        <small id="delete_student_help" class="form-text text-muted">This action cannot be undone.</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="file" class="collapse dip-lt-orange-bg">
+  <div class="mx-auto wrapper">
+    <div class="row pl-3 pt-4">
+      <div class="col-sm-8">
+        <input type="file" id="input_file" accept=".csv" aria-describedby="input_file_help">
+        <small id="input_file_help" class="form-text text-muted">Select a course from your local file system.</small>
+        <button class="input-group-text text-success" id="load_course">
+          <i class="fas fa-file-upload"></i>&nbsp Load Course
+        </button>
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="row pl-3 pt-1 pb-3">
+      <div class="col-sm-8">
+        <button class="input-group-text text-success" id="save_course">
+          <i class="fas fa-save"></i>&nbsp Save Progress
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-sm-12">
+  <button id="edit-toggle" class="btn btn-sm dip-dk-orange-bg dip-creme px-3 py-2 rounded-0 shadow">
+    <i class="fas fa-edit"></i> <span class="d-none d-sm-block">Edit</span>
+  </button>
+  <button id="file-toggle" class="btn btn-sm dip-dk-orange-bg dip-creme px-3 py-2 rounded-0 shadow">
+    <i class="far fa-file"></i> <span class="d-none d-sm-block">File</span>
+  </button>
+</div>

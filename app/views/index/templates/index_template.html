@@ -1,0 +1,101 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Pick a Student">
+    <meta name="author" content="Zachary P. Day">
+    <link rel="icon" href="./static/img/mouse.ico">
+    <title>Pick a Student</title>
+    {% include "index_css.html" %}
+    <style>
+      body {
+        min-height: 100% !important;
+        height: 100% !important;
+        min-width: 100% !important;
+        width: 100% !important;
+        overflow: hidden !important;
+      }
+
+      .lobster-font {
+        font-family: 'Lobster', cursive;
+      }
+
+      .grade-selector input{
+        margin:0;
+        padding:0;
+        -webkit-appearance:none;
+        -moz-appearance:none;
+        appearance:none;
+      }
+
+      .correct{
+      	background-image:url("/static/img/correct.png");
+      	height:auto;
+      	width:auto;
+      }
+
+      .absent{
+      	background-image:url("/static/img/absent.png");
+      	height:auto;
+      	width:auto;
+      }
+
+      .incorrect{
+      	background-image:url("/static/img/incorrect.png");
+      	height:auto;
+      	width:auto;
+      }
+
+      .grade-selector-2 input:active +.select, .grade-selector input:active +.select{
+        opacity: .9;
+      }
+
+      .grade-selector-2 input:checked +.select, .grade-selector input:checked +.select{
+        -webkit-filter: none;
+        -moz-filter: none;
+        filter: none;
+      }
+
+      .grade-selector {
+        position:relative;
+        min-height:200px!important;
+      }
+
+      .select{
+        cursor:pointer;
+        background-size:contain;
+        background-repeat:no-repeat;
+        display:block;
+        position:absolute;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+        -webkit-transition: all 100ms ease-in;
+        -moz-transition: all 100ms ease-in;
+        transition: all 100ms ease-in;
+        -webkit-filter: brightness(1.8) grayscale(1) opacity(.7);
+        -moz-filter: brightness(1.8) grayscale(1) opacity(.7);
+        filter: brightness(1.8) grayscale(1) opacity(.7);
+      }
+
+      .select:hover{
+        -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
+        -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
+        filter: brightness(1.2) grayscale(.5) opacity(.9);
+      }
+    </style>
+  </head>
+  <body class="h-100 w-100 dip-grey-bgt-2">
+    <div class="container">
+      <div class="col-sm-12">
+        {% include "index_nav_t.html" %}
+      </div>
+
+      {% include "index_home.html" %}
+
+      <div class="dip-footer"></div>
+    </div>
+    {% include "index_js.html" %}
+  </body>
+</html>
