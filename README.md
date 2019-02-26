@@ -1,2 +1,20 @@
 # Pick-a-Student-v4
 Educational tool made for Dr. Rouse at LeTourneau University used to get students involved in class. 
+
+Differing from the three previous version I've made, all functionality resides on the client-side. Given that Dr. Rouse prefers to not use a database since the course files contain students' grades, no serious server side functionality is required. Technically, this project in its current state doesn't require the use of any backend framework (in this case Flask), but the current setup allows for more flexibility when future students expand on this. 
+
+Tips for Future Students:
+- Fork the project first in order to make your own changes.
+- The only requirement for the project is to install Flask (you can see requirements.txt for any of Flask's dependencies, but installing Flask will automatically take care of that).
+- If you've never used Flask, it's not too difficult to figure out. You can view my Github profile for a Flask boilerplate of which this project is based on. Parts of a website/api are usually divided into different views or what Flask calls Blueprints. Ensure that if you add a view to include it in the app > blueprints.py file so it can be initialized. Also, Flask template files reside in a folder called "templates" which that folder then resides in the specific view that will use those templates. Finally, in order to run the program, you can enter "python manage.py". And if you use a virtual environment (see virtualenv) to keep track of package requirements, which I highly recommend, ensure that you activate the environment in the terminal before running the program. Otherwise, it will not work.
+- As for the clientside, javascript and css dependencies are loaded from CDNs and can be found in app > views > index > templates (index_css.html and index_js.html). There is dip.css which is hosted on a personal server of mine and contains a lot of css that I re-use, but I have no intention of ever removing it. Contact me if for whatever reason you have issues loading it.
+- Check if any of the JS/CSS dependencies have updates available. Check fontawesome's site for new versions and the rest of the requirements are pulled from cdnjs.com.
+- Shoot me a message if you have questions about how the program is structured whether it be related to the front end or back end.
+
+Improvement Recommendations:
+- Previous versions included manually editing capability within the application, but it's a good feature to implement for 
+- I'm pretty busy at the moment of writing this, but more error checking would be a good idea. Some functions inside the Course and Student factories (see app > static > js > pas.js) already return boolean values so that calling code can know if the operation proceeded as expected. However, more could definitely be done, and it is considered best practice to do so. For example, if a function is supposed to return a non-boolean value, return false if the operation failed so calling code can know that it failed and take any necessary actions.
+- Expounding upon error checking, verifying the type of variable in function calls is generally a good idea as well. You can do this in Javascript using the "typeof" operator to confirm, for example, that a string variable is not applied to one of the grade counts (correct, absent, or incorrect) which ought to be an integer.
+- On the homepage of the application, it might be a good feature to display the name of the current course and students left before the students array becomes shuffled when the all the students have been clicked through.
+- If you really want to, sound effects are always pretty cool. The original version included them, but we ended up removing them.
+- Perhaps if Dr. Rouse allows it, using a database would be infinitely more convenient than dealing with csv files. In this case, a SQL database would suffice since the data is relational. You would want to obscure students names in some way if you do use a database because of federal laws regarding privacy of students' grade.
